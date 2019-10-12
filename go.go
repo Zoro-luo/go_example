@@ -218,9 +218,9 @@
 时间*日期*函数：
 	(1) 时间和日期函数,需要导入time包 	  import "time"
 		a. 格式化的第一种方式：
-			now := time.Now 	//返回当前时间戳
+			now := time.Now() 		//返回当前时间戳
 			fmt.Printf("当前年月日时分秒：%d-%d-%d %d:%d:%d\n",now.Year(),now.Month(),now.Day(),
-														now.Hour(),now.Minute(),now.Sencond())
+				now.Hour(),now.Minute(),now.Sencond())
 		b. 格式化的第二种方式
 			fmt.Printf(now.Format("2006/01/02 15:04:05"))
 			fmt.Printf(now.Format("2006-01-02"))	//返回当前的年月日
