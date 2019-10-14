@@ -1257,8 +1257,8 @@ map*： key-value的数据结构,又叫字典或关联数组
 					writer.Flush()
 				}
 		(2)	打开一个存在的文件 将原来的内容覆盖成新的内容 10 句 "你好 祖国！"
-				代码 和上面一样： 上面 file,err := os.OpenFile(filePath, os.O_WRONLY | os.O_CREATE,0666) 替换如下，
-									 file,err := os.OpenFile(filePath, os.O_WRONLY | os.O_TRUNC ,0666)
+				file,err := os.OpenFile(filePath, os.O_WRONLY | os.O_CREATE,0666) 替换如下，
+				file,err := os.OpenFile(filePath, os.O_WRONLY | os.O_TRUNC ,0666)
 		(3) 打开一个存在的文件，将原来的内容追加内容 "追加内容"
 				file,err := os.OpenFile(filePath, os.O_WRONLY | os.O_TRUNC ,0666) 替换如下，
 				file,err := os.OpenFile(filePath, os.O_WRONLY | os.O_APPEND ,0666)
