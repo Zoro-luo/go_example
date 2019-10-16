@@ -1,5 +1,9 @@
 格式化：
 	gofmt -w hello.go
+编译*指令：
+	go build -o 123.exe main.go
+	go build xxx.go
+
 输入输出fmt:
 		var name string 
 		fmt.Println("请输入姓名")	//输出
@@ -328,7 +332,7 @@
 		g. 如果包名过长,Go支持给包取别名. 注意细节：取别名后,原来的包名就不能用了
 		h. *如果需要编译成一个可执行的文件，就需要将这个包声明为main,即package main. 这就是语法规范.如果写一个库文件,包名可以自定义
 		i. *项目目录结构在$GOPATH的src下. 编译需进入在main包的目录下,
-				编译指令：比如：E:\code\Go> go build -o bin/my.exe go_code/day2/code/demo/main //在GOPATH目录下生成一个存编译文件的目录
+				编译*指令：比如：E:\code\Go> go build -o bin/my.exe go_code/day2/code/demo/main //在GOPATH目录下生成一个存编译文件的目录
 	(3) 调用外部包和函数
 			package main
 			import(
