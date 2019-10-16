@@ -241,6 +241,10 @@
 				    Hour                 = 60 * Minute			//小时
 				)
 			常量的作用：在程序中可用于获取指定时间单位的时间，比如像得到100毫秒 100*time.Microsecond
+日志*： 	import "log"
+	log.SetFlags(log.Lshortfile| log.Ltime | log.Ldate)
+	var arr [3]int = [3]int{1:100}
+	log.Println(arr)
 流程控制*：
 	（1） 从终端出入字符串 转为整形 否则输出错误信息
 		func main(){
