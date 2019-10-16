@@ -700,10 +700,30 @@ map*： key-value的数据结构,又叫字典或关联数组
 		a. map是引用类型，遵循引用类型的机制,在一个函数接收map，修改后会直接修改原来的map
 		b. map的容量达到后,想要map增加元素,会自动扩容,并不会发送panic,也就是说map能自动增长键值对(key-value)
 		c. map的value也经常使用struct类型,更适用于管理复杂的数据
-锁*：
+锁*sync*：
 	（1）线程同步 （sync锁）
 			a. 互斥锁, var mu sync.Mutex
 			b. 读写锁, var mu sync.RWMutex
+			import ("fmt";"sync";"time";)
+			var wg sync.WaitGroup	//WaitGroup 可以用来等待协程执行完成
+			func fn1(){ time.Sleep(time.Second*1);fmt.Println("sleep 1 s");
+				wg.Done()	 // 执行完成就关闭一个等待
+			}
+			func fn2(){ time.Sleep(time.Second*1);fmt.Println("sleep 2 s");
+				wg.Done()	 // 执行完成就关闭一个等待
+			}
+			func main(){
+				begin := time.Now()		  	//开始时间
+				for i:=0;i<5 ;i++  {
+					go fn1()
+					wg.Add(1) 		 		// 每次启动一个协程就添加一个进入同步组
+					go fn2()
+					wg.Add(1)
+				}
+				wg.Wait()					//等待所有子协程执行完成后才继续执行下面代码
+				end := time.Now()
+				fmt.Println("总共用时:",end.Sub(begin))
+			}	
  	（2）go get 安装第三方包
  			go get github：//。。。。
 结构体*：(和 java/PHP 语言的对象class 类似)
