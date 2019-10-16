@@ -714,14 +714,14 @@ map*： key-value的数据结构,又叫字典或关联数组
 				wg.Done()	 // 执行完成就关闭一个等待
 			}
 			func main(){
-				begin := time.Now()		  	//开始时间
+				begin := time.Now()	//开始时间
 				for i:=0;i<5 ;i++  {
 					go fn1()
-					wg.Add(1) 		 		// 每次启动一个协程就添加一个进入同步组
+					wg.Add(1)	// 每次启动一个协程就添加一个进入同步组
 					go fn2()
 					wg.Add(1)
 				}
-				wg.Wait()					//等待所有子协程执行完成后才继续执行下面代码
+				wg.Wait()	//等待所有子协程执行完成后才继续执行下面代码
 				end := time.Now()
 				fmt.Println("总共用时:",end.Sub(begin))
 			}	
