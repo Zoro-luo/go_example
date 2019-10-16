@@ -701,6 +701,7 @@ map*： key-value的数据结构,又叫字典或关联数组
 		b. map的容量达到后,想要map增加元素,会自动扩容,并不会发送panic,也就是说map能自动增长键值对(key-value)
 		c. map的value也经常使用struct类型,更适用于管理复杂的数据
 锁*sync*：
+	https://blog.zxysilent.com/post/goweb-03-6.html
 	（1）线程同步 （sync 同步包）
 			a. 互斥锁, var mu sync.Mutex
 			b. 读写锁, var mu sync.RWMutex
