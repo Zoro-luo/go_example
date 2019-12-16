@@ -110,7 +110,7 @@
 		func main(){
 			var num = 10
 			//fmt.Printf()可以做格式化输出
-			fmt.Printf("num 的类型 %T", num)
+			fmt.Printf("num 的类型 T%", num)
 			// 如何在程序查看某个变量的占用字节大小和数据类型(使用较多)
 			var n1 int64 = 10
 			// unsafe.Sizeof(n1) 是unsafe包的一个函数 可以返回n1变量占用的字节数
@@ -159,6 +159,16 @@
 			s1[0] = 'a'
 			str := string(s1)	//数组转为字符串
 			fmt.Println(str)
+
+			s := "hello"；
+			c := []byte(s)		
+			c[0] = 'c'
+			s2 := string(c)
+			fmt.Printf("%s\n",s2)
+
+			a := "hello"
+			ss := "c" + a[1:]	//// 字符串虽不能更改，但可进行切片操作
+			fmt.Printf("%s\n",ss)
 		}
 	(2) 字符串常用的系统函数
 		1. len()	=>	func len(v type) int
