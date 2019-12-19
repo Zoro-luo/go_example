@@ -1,3 +1,4 @@
+文档资料：http://yuancao.meicx.com/d/34
 格式化：
 	gofmt -w hello.go
 编译*指令：
