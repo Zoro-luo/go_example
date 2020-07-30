@@ -1,5 +1,8 @@
 参考：https://blog.zxysilent.com/archives/ 	#2018年07月 (17)
 
+我的scdn博客地址：
+	https://blog.csdn.net/u011620855
+
 beego框架：		// 官网： https://beego.me/  
 	下载：	go get github.com/astaxie/beego
 	安装bee 工具：	go get github.com/beego/bee
